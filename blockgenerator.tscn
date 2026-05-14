@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://c4fvymbg2mu6d"]
+
+[ext_resource type="Script" uid="uid://bgumbm5oj58ln" path="res://grid.gd" id="1_hpv4v"]
+
+[node name="Blockgenerator" type="Node2D" unique_id=41955637]
+script = ExtResource("1_hpv4v")

@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://b1s82al51lo5i"]
+
+[ext_resource type="Script" uid="uid://cybsgtc7protp" path="res://blocks.gd" id="1_hch05"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r76ts"]
+size = Vector2(146, 142)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_hch05"]
+
+[node name="Block" type="Area2D" unique_id=1224343144]
+script = ExtResource("1_hch05")
+type = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=950760817]
+position = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_r76ts")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=657717424]
+scale = Vector2(1.028, 1)
+texture = SubResource("PlaceholderTexture2D_hch05")

@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://dstyojoxsiw7w"]
+
+[ext_resource type="PackedScene" uid="uid://c4fvymbg2mu6d" path="res://blockgenerator.tscn" id="1_80nbo"]
+[ext_resource type="PackedScene" uid="uid://cx083wym6yixn" path="res://healblock.tscn" id="2_feb5d"]
+[ext_resource type="PackedScene" uid="uid://dfcsinlk2101s" path="res://damageblock.tscn" id="3_fc0e3"]
+
+[node name="Node2D" type="Node2D" unique_id=815645256]
+
+[node name="Blockgenerator" parent="." unique_id=41955637 instance=ExtResource("1_80nbo")]
+WIDTH = 5
+HEIGHT = 5
+blocks_available = Array[PackedScene]([ExtResource("2_feb5d"), ExtResource("3_fc0e3")])
