@@ -1,20 +1,32 @@
 [gd_scene format=3 uid="uid://cx083wym6yixn"]
 
-[ext_resource type="Script" uid="uid://cybsgtc7protp" path="res://blocks.gd" id="1_4dg0d"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_r76ts"]
-size = Vector2(12, 12)
+[ext_resource type="Script" uid="uid://rqfniiyh3bnv" path="res://healblock.gd" id="1_4dg0d"]
+[ext_resource type="Script" uid="uid://ud8pjmsyn1w3" path="res://scripts/systems/blocks/block_hurtbox.gd" id="2_lmqu5"]
+[ext_resource type="Script" uid="uid://dmptp8r0w2hg7" path="res://scripts/systems/blocks/block_hitbox.gd" id="3_1fccu"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_4dg0d"]
 size = Vector2(16, 16)
 
-[node name="Block" type="Area2D" unique_id=1224343144]
-script = ExtResource("1_4dg0d")
-type = 1
+[sub_resource type="CircleShape2D" id="CircleShape2D_60q3t"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=950760817]
-position = Vector2(2, 3)
-shape = SubResource("RectangleShape2D_r76ts")
+[sub_resource type="CircleShape2D" id="CircleShape2D_qu3np"]
+
+[node name="HealBlock" type="Node2D" unique_id=950537223 node_paths=PackedStringArray("hitbox", "hurtbox")]
+script = ExtResource("1_4dg0d")
+hitbox = NodePath("hitbox")
+hurtbox = NodePath("hurtbox")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=657717424]
 texture = SubResource("PlaceholderTexture2D_4dg0d")
+
+[node name="hurtbox" type="Area2D" parent="." unique_id=1044851878]
+script = ExtResource("2_lmqu5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbox" unique_id=1524764889]
+shape = SubResource("CircleShape2D_60q3t")
+
+[node name="hitbox" type="Area2D" parent="." unique_id=337795659]
+script = ExtResource("3_1fccu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox" unique_id=1861452388]
+shape = SubResource("CircleShape2D_qu3np")

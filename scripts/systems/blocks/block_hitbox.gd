@@ -1,14 +1,15 @@
 extends Area2D
-class_name Hurtbox
+class_name Hitbox
 
-signal hit(attacker)
+signal touched(target)
 
 func _ready():
+
 	area_entered.connect(_on_area_entered)
 
 
 func _on_area_entered(area):
 
-	print("Hurtbox hit:", area.name)
+	print("hitbox touched:", area.name)
 
-	hit.emit(area)
+	touched.emit(area)

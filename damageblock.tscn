@@ -1,20 +1,31 @@
 [gd_scene format=3 uid="uid://dfcsinlk2101s"]
 
-[ext_resource type="Script" uid="uid://cybsgtc7protp" path="res://blocks.gd" id="1_ptxpx"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_r76ts"]
-size = Vector2(14, 13)
+[ext_resource type="Script" uid="uid://p5xnwkpo5xbb" path="res://scripts/systems/blocks/damageblock.gd" id="1_ptxpx"]
+[ext_resource type="Script" uid="uid://dmptp8r0w2hg7" path="res://scripts/systems/blocks/block_hitbox.gd" id="2_no7xq"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_hch05"]
 size = Vector2(16, 16)
 
-[node name="Block" type="Area2D" unique_id=1224343144]
-script = ExtResource("1_ptxpx")
+[sub_resource type="CircleShape2D" id="CircleShape2D_2yoks"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=950760817]
-position = Vector2(0, 1.5)
-shape = SubResource("RectangleShape2D_r76ts")
+[sub_resource type="CircleShape2D" id="CircleShape2D_1rh8f"]
+
+[node name="DamageBlock" type="Node2D" unique_id=1162255619 node_paths=PackedStringArray("hitbox", "hurtbox")]
+script = ExtResource("1_ptxpx")
+hitbox = NodePath("hitbox")
+hurtbox = NodePath("hurtbox")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=657717424]
 scale = Vector2(1.028, 1)
 texture = SubResource("PlaceholderTexture2D_hch05")
+
+[node name="hurtbox" type="Area2D" parent="." unique_id=1206536319]
+script = ExtResource("2_no7xq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbox" unique_id=1631030399]
+shape = SubResource("CircleShape2D_2yoks")
+
+[node name="hitbox" type="Area2D" parent="." unique_id=531745920]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox" unique_id=1993938]
+shape = SubResource("CircleShape2D_1rh8f")
