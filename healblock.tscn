@@ -3,17 +3,17 @@
 [ext_resource type="Script" uid="uid://cybsgtc7protp" path="res://blocks.gd" id="1_4dg0d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r76ts"]
-size = Vector2(58, 53)
+size = Vector2(12, 12)
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_4dg0d"]
-size = Vector2(64, 64)
+size = Vector2(16, 16)
 
 [node name="Block" type="Area2D" unique_id=1224343144]
 script = ExtResource("1_4dg0d")
 type = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=950760817]
-position = Vector2(1, 0.5)
+position = Vector2(2, 3)
 shape = SubResource("RectangleShape2D_r76ts")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=657717424]

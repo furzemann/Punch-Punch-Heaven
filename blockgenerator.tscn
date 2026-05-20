@@ -4,3 +4,4 @@
 
 [node name="Blockgenerator" type="Node2D" unique_id=41955637]
 script = ExtResource("1_hpv4v")
+CELL_SIZE = 16

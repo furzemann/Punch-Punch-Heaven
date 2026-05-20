@@ -48,13 +48,13 @@ func execute():
 	match type:
 
 		Type.DAMAGE:
-			print("damage")
+			print("destroyed")
 
 		Type.HEAL:
-			print("heal")
+			print("healed player")
 
 		Type.MINE:
-			print("boom")
+			print("damaged player")
 
 
 	queue_free()
